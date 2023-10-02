@@ -1,5 +1,5 @@
 package sistemachamados.model;
 
-public class Usuario {
+interface Usuario {
 
 }
