@@ -1,19 +1,45 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sistemachamados.model.Chamado;
+import sistemachamados.utils.Utilitarios;
+import org.junit.jupiter.api.Assertions.*;
+
+import java.time.Instant;
 
 public class testeChamado {
 
     private Chamado chamado;
+    private Utilitarios ut;
 
     @BeforeEach
     void iniciar(){
+        ut = new Utilitarios();
+
+        chamado = new Chamado(
+                ut.gerarIdSolicitacao(),"SES", Instant
+                .now(),Instant.now(),"Aberto",2,"Impressora explodiu e saiu farinha");
+
 
 
     }
     @Test
     void testeInstancia(){
-        chamado.equals(2);
+        boolean funciona = false;
+        if(!(chamado == null))
+            funciona = true;
+
+        Assertions.assertTrue(funciona);
+
+    }
+    @Test
+    void testToString(){
+        System.out.println(chamado.toString());
+
+    }
+    @Test
+    void testeHorario(){
+
     }
 
 
