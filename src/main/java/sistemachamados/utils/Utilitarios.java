@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Utilitarios {
 
-    static void gerarIdSolicitacao(){
+    public Integer gerarIdSolicitacao(){
         Random random = new Random();
         String id = "";
 
@@ -12,14 +12,14 @@ public class Utilitarios {
             Integer temp = random.nextInt(10);
             id = id + temp.toString();
         }
-        System.out.println(id);
 
+       Integer idInt = Integer.valueOf(id);
+
+        return idInt;
 
     }
 
-    public static void main(String[] args) {
-        gerarIdSolicitacao();
-    }
+
 
 
 }
