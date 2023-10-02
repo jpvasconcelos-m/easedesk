@@ -8,11 +8,12 @@ public class Utilitarios {
         Random random = new Random();
         String id = "";
 
-        for (int i = 0; i < 5; i++) {
-            Integer temp = random.nextInt(9);
+        for (int i = 0; i < 9; i++) {
+            Integer temp = random.nextInt(10);
             id = id + temp.toString();
         }
         System.out.println(id);
+
 
     }
 
