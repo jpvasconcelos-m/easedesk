@@ -1,4 +1,4 @@
 package sistemachamados.model;
 
-public class UsuarioPrestador extends UsuarioComum {
+public class UsuarioPrestador extends Usuario {
 }
