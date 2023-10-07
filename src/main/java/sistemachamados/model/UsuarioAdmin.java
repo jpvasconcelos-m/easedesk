@@ -1,4 +1,4 @@
 package sistemachamados.model;
 
-public class UsuarioAdmin implements Usuario {
+public class UsuarioAdmin extends UsuarioPrestador{
 }
