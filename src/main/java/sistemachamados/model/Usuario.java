@@ -1,5 +1,8 @@
 package sistemachamados.model;
 
-interface Usuario {
+public class Usuario {
+    String nomeDeUsuario;
+    String senha;
+
 
 }
