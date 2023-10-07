@@ -3,11 +3,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sistemachamados.model.Chamado;
 import sistemachamados.utils.Utilitarios;
-import org.junit.jupiter.api.Assertions.*;
 
 import java.time.Instant;
 
-public class testeChamado {
+public class TesteChamado {
 
     private Chamado chamado;
     private Utilitarios ut;
