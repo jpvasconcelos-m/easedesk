@@ -1,11 +1,10 @@
-import org.graalvm.nativeimage.IsolateThread;
 import org.junit.jupiter.api.Test;
-import sistemachamados.model.Usuario;
+import sistemachamados.model.UsuarioComum;
 import sistemachamados.utils.SenhaUtils;
 
 public class TesteUsuarioSenha {
 
-    private Usuario usuario;
+    private UsuarioComum usuario;
     private String senha;
 
 

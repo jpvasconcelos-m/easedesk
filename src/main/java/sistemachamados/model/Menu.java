@@ -17,7 +17,7 @@ public class Menu {
 
 
 
-        Usuario usuario =  receberLogin();
+        UsuarioComum usuario =  receberLogin();
 
 
         mostrarOpcoes();
@@ -46,11 +46,19 @@ public class Menu {
                 mostrarOpcoes();
             case 2:
                 if (fila.isEmpty()){
-                    System.out.println("Não há nenhum chamado na fila.\n");
                     mostrarOpcoes();
+                    System.out.println("Não há nenhum chamado na fila.");
+                    continue;
+
                 }
                 else
                 verFila();
+                continue;
+            case 3:
+
+                usuario.capturarChamado();
+                continue;
+
 
             default: break;
         }
@@ -61,13 +69,13 @@ public class Menu {
 
     }
 
-    private static Usuario receberLogin() {
+    private static UsuarioComum receberLogin() {
 
         System.out.println("Entre seu usuário: ");
         String usuario = sc.nextLine();
 
 
-        return new Usuario(usuario);
+        return new UsuarioComum(usuario);
     }
 
     static void mostrarOpcoes(){
@@ -79,7 +87,7 @@ public class Menu {
 
     }
 
-    static void criarChamado(Usuario usuario){
+    static void criarChamado(UsuarioComum usuario){
 
 
 
@@ -96,15 +104,11 @@ public class Menu {
 
     static void verFila(){
       fila.stream().forEach(chamado -> {
-          System.out.printf("ID %d; Descrição: '%s' ; Usuario criador: %s\n",chamado.id,chamado.getDescricao(),chamado.usuarioCriador.getLogin());
+          System.out.println(chamado.toString());
       });
     }
 
-    static void capturarChamado(UsuarioTI usuarioCapturador){
 
-        usuarioCapturador.capturarChamado();
-
-    }
 
 
 }

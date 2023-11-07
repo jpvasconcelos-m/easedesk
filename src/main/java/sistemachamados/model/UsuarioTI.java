@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 import static sistemachamados.model.FilaChamados.fila;
 
-public class UsuarioTI extends Usuario {
+public class UsuarioTI extends UsuarioComum {
+
+
 
 
     public UsuarioTI(String login) {
         super(login);
     }
 
-    void capturarChamado(){
+    public void capturarChamado(){
         Scanner sc= new Scanner(System.in);
         System.out.println("Digite o índice do chamado que deseja capturar: ");
         int indice =  sc.nextInt();

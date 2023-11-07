@@ -12,12 +12,12 @@ public class Chamado {
     String descricao;
     int prioridade;
 
-    Usuario usuarioCriador;
+    UsuarioComum usuarioCriador;
 
-    Usuario usuarioResponsavel;
+    UsuarioTI usuarioResponsavel;
 
 
-    public Chamado(String descricao, int prioridade, Usuario usuarioCriador) {
+    public Chamado(String descricao, int prioridade, UsuarioComum usuarioCriador) {
         this.descricao = descricao;
         this.prioridade = prioridade;
         this.usuarioCriador = usuarioCriador;
@@ -36,11 +36,11 @@ public class Chamado {
         return prioridade;
     }
 
-    public Usuario getUsuarioCriador() {
+    public UsuarioComum getUsuarioCriador() {
         return usuarioCriador;
     }
 
-    public Usuario getUsuarioResponsavel() {
+    public UsuarioComum getUsuarioResponsavel() {
         return usuarioResponsavel;
     }
 
@@ -53,4 +53,13 @@ public class Chamado {
 
     }
 
+
+    @Override
+    public String toString() {
+
+        String str =
+        "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao + ";" + "Usuario criador: " + this.usuarioCriador.login + ";"+ " Prioridade: "  + this.prioridade;
+
+                return str;
+    }
 }
