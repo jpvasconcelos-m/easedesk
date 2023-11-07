@@ -1,85 +1,56 @@
 package sistemachamados.model;
 
-import java.time.Instant;
-
+import static sistemachamados.model.FilaChamados.fila;
 
 public class Chamado {
 
-   private final Integer numSolicitacao;
-    private final String Contrato;
-    private final Instant dataCriacao;
-   private final Instant prazoLimite;
-   private Usuario usuarioResponsavel;
-   private String situacao;
-   private final int prioridade;
-   private String descricao;
 
-    public Chamado(Integer numSolicitacao, String contrato, Instant dataCriacao, Instant prazoLimite, String situacao, int prioridade, String descricao) {
-        this.numSolicitacao = numSolicitacao;
-        Contrato = contrato;
-        this.dataCriacao = dataCriacao;
-        this.prazoLimite = prazoLimite;
-        this.situacao = situacao;
-        this.prioridade = prioridade;
+
+
+    int id;
+
+    String descricao;
+    int prioridade;
+
+    Usuario usuarioCriador;
+
+    Usuario usuarioResponsavel;
+
+
+    public Chamado(String descricao, int prioridade, Usuario usuarioCriador) {
         this.descricao = descricao;
+        this.prioridade = prioridade;
+        this.usuarioCriador = usuarioCriador;
+
+        fila.add(this);
+        this.id = fila.indexOf(this);
+
     }
 
 
-    public Integer getNumSolicitacao() {
-        return numSolicitacao;
-    }
-
-    public String getContrato() {
-        return Contrato;
-    }
-
-    public Instant getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public Instant getPrazoLimite() {
-        return prazoLimite;
-    }
-
-    public Usuario getUsuarioResponsavel() {
-        return usuarioResponsavel;
-    }
-
-    public String getSituacao() {
-        return situacao;
+    public String getDescricao() {
+        return descricao;
     }
 
     public int getPrioridade() {
         return prioridade;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public Usuario getUsuarioCriador() {
+        return usuarioCriador;
     }
 
-    public void setUsuarioResponsavel(Usuario usuarioResponsavel) {
+    public Usuario getUsuarioResponsavel() {
+        return usuarioResponsavel;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setUsuarioResponsavel(UsuarioTI usuarioResponsavel){
         this.usuarioResponsavel = usuarioResponsavel;
+
     }
 
-    public void setSituacao(String situacao) {
-        this.situacao = situacao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    @Override
-    public String toString() {
-        return "Chamado{" +
-                "numSolicitacao=" + numSolicitacao +
-                ", Contrato='" + Contrato + '\'' +
-                ", dataCriacao=" + dataCriacao +
-                ", prazoLimite=" + prazoLimite +
-                ", usuarioResponsavel=" + usuarioResponsavel +
-                ", situacao='" + situacao + '\'' +
-                ", prioridade=" + prioridade +
-                ", descricao='" + descricao + '\'' +
-                '}';
-    }
 }
