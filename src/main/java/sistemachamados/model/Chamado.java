@@ -28,6 +28,8 @@ public class Chamado {
     }
 
 
+
+
     public String getDescricao() {
         return descricao;
     }
@@ -58,7 +60,9 @@ public class Chamado {
     public String toString() {
 
         String str =
-        "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao + ";" + "Usuario criador: " + this.usuarioCriador.login + ";"+ " Prioridade: "  + this.prioridade;
+        "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao +
+                ";" + "Usuario criador: " + this.usuarioCriador.login + ";"+ " Prioridade: "
+                + this.prioridade + ";" +  " " + "Responsável: " + this.usuarioResponsavel;
 
                 return str;
     }
