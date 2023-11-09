@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class FilaChamados {
 
-   public static LinkedList<Chamado> fila = new LinkedList();
+   public static LinkedList<Chamado> fila = new LinkedList<>();
 
 
    static void listarChamados(){
