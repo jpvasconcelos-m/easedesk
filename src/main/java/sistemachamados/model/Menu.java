@@ -17,13 +17,13 @@ public class Menu {
 
 
 
-        UsuarioComum usuario =  receberLogin();
+        Usuario usuario = (Usuario) receberLogin();
 
 
         mostrarOpcoes();
 
-        int opcao = 0;
-        while(opcao != 4) {
+        int opcao = 99;
+        while(opcao != 0) {
             try {
                 opcao = sc.nextInt();
                 sc.nextLine();
@@ -41,7 +41,7 @@ public class Menu {
             }
         switch(opcao){
             case 1:
-                criarChamado(usuario);
+                criarChamado((Usuario) usuario);
                 System.out.println("Chamado Criado!\n");
                 mostrarOpcoes();
             case 2:
@@ -58,6 +58,12 @@ public class Menu {
 
                 usuario.capturarChamado();
                 continue;
+            case 4:
+                usuario =  (Usuario) receberLogin();
+                mostrarOpcoes();
+                continue;
+
+
 
 
             default: break;
@@ -69,13 +75,21 @@ public class Menu {
 
     }
 
-    private static UsuarioComum receberLogin() {
-
+    private static Object receberLogin() {
         System.out.println("Entre seu usuário: ");
         String usuario = sc.nextLine();
+        if (usuario.contains("admin")){
+            return new UsuarioTI(usuario);
+        }
+        else {
+            return new UsuarioComum(usuario);
+        }
 
 
-        return new UsuarioComum(usuario);
+
+
+
+
     }
 
     static void mostrarOpcoes(){
@@ -87,7 +101,7 @@ public class Menu {
 
     }
 
-    static void criarChamado(UsuarioComum usuario){
+    static void criarChamado(Usuario usuario){
 
 
 
@@ -97,7 +111,7 @@ public class Menu {
         int prioridade = sc.nextInt();
         sc.nextLine();
 
-        new Chamado(descricao,prioridade,usuario);
+        new Chamado(descricao,prioridade, (UsuarioComum) usuario);
 
 
     }
