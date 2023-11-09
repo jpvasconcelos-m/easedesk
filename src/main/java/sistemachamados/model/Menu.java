@@ -1,5 +1,7 @@
 package sistemachamados.model;
 
+import sistemachamados.utils.ScanUtils;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -41,7 +43,7 @@ public class Menu {
             }
         switch(opcao){
             case 1:
-                criarChamado((Usuario) usuario);
+                criarChamado(usuario);
                 System.out.println("Chamado Criado!\n");
                 mostrarOpcoes();
             case 2:
@@ -52,13 +54,22 @@ public class Menu {
 
                 }
                 else
-                verFila();
-                continue;
+                    verFila();
+                    continue;
             case 3:
 
                 usuario.capturarChamado();
                 continue;
-            case 4:
+
+            case 4: usuario.finalizarChamado();
+                    mostrarOpcoes();
+                    continue;
+
+            case 5: removerChamado();
+                    continue;
+
+
+            case 6:
                 usuario =  (Usuario) receberLogin();
                 mostrarOpcoes();
                 continue;
@@ -71,6 +82,7 @@ public class Menu {
 
 
         }
+
 
 
     }
@@ -93,7 +105,7 @@ public class Menu {
     }
 
     static void mostrarOpcoes(){
-        System.out.println("1 - Criar Chamado\n2 - Ver fila de Chamados\n3 - Capturar Chamado\n4 - Sair");
+        System.out.println("1 - Criar Chamado\n2 - Ver fila de Chamados\n3 - Capturar Chamado\n4 - Finalizar Chamado\n5 - Remover da Fila\n6 - Trocar Usuário ");
 
 
 
@@ -102,24 +114,50 @@ public class Menu {
     }
 
     static void criarChamado(Usuario usuario){
-
+        String prioridade = "0";
 
 
         System.out.println("Digite a descrição do chamado: ");
         String descricao = sc.nextLine();
-        System.out.println("Defina a prioridade (1 a 3)");
-        int prioridade = sc.nextInt();
-        sc.nextLine();
 
-        new Chamado(descricao,prioridade, (UsuarioComum) usuario);
+        while(!((prioridade.equals("1") || prioridade.equals("2"))||prioridade.equals("3"))) {
+            System.out.println("Defina a prioridade (1 a 3)");
+            prioridade = sc.nextLine();
+
+        }
+
+        new Chamado(descricao, Integer.parseInt(prioridade), (UsuarioComum) usuario).setStatus(Status.ABERTO);
 
 
-    }
+
+
+            }
+
+
+
+
+
+
 
     static void verFila(){
+
       fila.stream().forEach(chamado -> {
           System.out.println(chamado.toString());
       });
+    }
+
+
+
+
+
+
+    static void removerChamado(){
+        System.out.println("Escolha o ID de um chamado que deseja remover da fila: ");
+        verFila();
+        int id  = sc.nextInt();
+        fila.remove(id);
+        verFila();
+        mostrarOpcoes();
     }
 
 
