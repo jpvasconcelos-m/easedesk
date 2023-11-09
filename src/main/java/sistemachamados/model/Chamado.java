@@ -7,14 +7,28 @@ public class Chamado {
 
 
 
+    Status status;
     int id;
-
     String descricao;
     int prioridade;
-
     UsuarioComum usuarioCriador;
-
     UsuarioTI usuarioResponsavel;
+
+    String solucao = "";
+
+
+
+
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public void setSolucao(String solucao) {
+        this.solucao = solucao;
+    }
+
+
 
 
     public Chamado(String descricao, int prioridade, UsuarioComum usuarioCriador) {
@@ -26,8 +40,6 @@ public class Chamado {
         this.id = fila.indexOf(this);
 
     }
-
-
 
 
     public String getDescricao() {
@@ -50,20 +62,47 @@ public class Chamado {
         return id;
     }
 
-    public void setUsuarioResponsavel(UsuarioTI usuarioResponsavel){
+    public void setUsuarioResponsavel(UsuarioTI usuarioResponsavel) {
         this.usuarioResponsavel = usuarioResponsavel;
 
     }
 
 
+
     @Override
     public String toString() {
 
-        String str =
-        "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao +
-                ";" + "Usuario criador: " + this.usuarioCriador.login + ";"+ " Prioridade: "
-                + this.prioridade + ";" +  " " + "Responsável: " + this.usuarioResponsavel;
+        String str = "";
 
-                return str;
+        switch(status){
+
+            case ABERTO:
+               str = "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao +
+                        ";" + "Usuario criador: " + this.usuarioCriador.login + ";" + " Prioridade: "
+                        + this.prioridade + ";" + " " + "Responsável: " + ";" +  "Status: " + Status.ABERTO;
+               break;
+            case CAPTURADO:
+                str = "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao +
+                        ";" + "Usuario criador: " + this.usuarioCriador.login + ";" + " Prioridade: "
+                        + this.prioridade + ";" + " " + "Responsável: " + this.usuarioResponsavel.login + ";" +  " Status: " + Status.CAPTURADO;
+                break;
+            case CONCLUIDO:
+                str = "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao +
+                        ";" + "Usuario criador: " + this.usuarioCriador.login + ";" + " Prioridade: "
+                        + this.prioridade + ";" + " " + "Responsável: " + this.usuarioResponsavel.login + ";" +  " Status: " + Status.CONCLUIDO
+                        + "; Solução : " + this.solucao;
+                break;
+
+
+
+
+        }
+
+        return str;
+
+
+
+
     }
+
 }
