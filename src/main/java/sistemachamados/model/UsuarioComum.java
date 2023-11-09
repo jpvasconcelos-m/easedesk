@@ -41,4 +41,9 @@ public class UsuarioComum implements Usuario {
         System.out.println("Permissão negada!");
 
     }
+
+    @Override
+    public void finalizarChamado() {
+        System.out.println("Permissão negada!");
+    }
 }
