@@ -1,4 +1,5 @@
 package sistemachamados.model;
+import sistemachamados.usuariosDB.HashSenhas;
 
 import java.util.Scanner;
 
@@ -8,12 +9,14 @@ public class UsuarioTI extends UsuarioComum {
 
    static  Scanner sc= new Scanner(System.in);
 
+    Boolean isAdmin = true;
 
 
 
+    public UsuarioTI(String email, String senha) {
+        super(email,senha);
 
-    public UsuarioTI(String login) {
-        super(login);
+
     }
 
     public void capturarChamado(){
@@ -26,7 +29,7 @@ public class UsuarioTI extends UsuarioComum {
         chamado.setUsuarioResponsavel(this);
         chamado.setStatus(Status.CAPTURADO);
 
-        System.out.printf("\nO usuario responsável pelo chamado ID: %d, DESCRIÇÃO: '%s' é : %s\n",chamado.id,chamado.getDescricao(),chamado.getUsuarioResponsavel().getLogin());
+        System.out.printf("\nO usuario responsável pelo chamado ID: %d, DESCRIÇÃO: '%s' é : %s\n",chamado.id,chamado.getDescricao(),chamado.getUsuarioResponsavel().getEmail());
         Menu.mostrarOpcoes();
 
 
