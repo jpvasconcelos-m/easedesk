@@ -1,7 +1,6 @@
-package BancoUsuario;
+package sistemachamados.BancoUsuario;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -13,10 +12,9 @@ public class CriarTabelaUsuarios {
                 CREATE TABLE IF NOT EXISTS usuarios(
                 id SERIAL PRIMARY KEY,
                 Nome VARCHAR(50) NOT NULL,
-                Email VARCHAR(100) NOT NULL,
-                Login Varchar(50) NOT NULL,
-                Senha Varchar(100) NOT NULL
-                                
+                Email VARCHAR(100) UNIQUE NOT NULL,
+                Senha Varchar(100) NOT NULL,
+                isAdmin BOOLEAN NOT NULL
                                 
                 );
                                 
