@@ -16,6 +16,7 @@ public class HashSenhas {
     }
 
     public  boolean checkPassword(String password , String hashedPassword){
+        //TODO NAO FUNCIONA! SEMPRE RETORNA FALSO!
         return passwordEncoder.matches(password,hashedPassword);
     }
 
