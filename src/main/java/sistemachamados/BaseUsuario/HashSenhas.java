@@ -1,4 +1,4 @@
-package BancoUsuario;
+package sistemachamados.BaseUsuario;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

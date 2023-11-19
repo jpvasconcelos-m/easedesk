@@ -11,6 +11,7 @@ public class UsuarioTI extends UsuarioComum {
 
 
 
+
     public UsuarioTI(String login) {
         super(login);
     }

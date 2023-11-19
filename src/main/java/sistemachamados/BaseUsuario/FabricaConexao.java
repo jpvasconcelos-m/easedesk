@@ -1,4 +1,4 @@
-package BancoUsuario;
+package sistemachamados.BaseUsuario;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

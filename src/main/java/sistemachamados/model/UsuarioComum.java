@@ -8,8 +8,9 @@ public class UsuarioComum implements Usuario {
 
 
 
-
+    String nome;
     String login;
+    String senha;
 
     public UsuarioComum(String login) {
         this.login = login;

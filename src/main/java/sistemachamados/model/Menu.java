@@ -1,7 +1,8 @@
 package sistemachamados.model;
 
-import sistemachamados.utils.ScanUtils;
+import sistemachamados.BaseUsuario.AdicionarUsuario;
 
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -73,6 +74,16 @@ public class Menu {
                 usuario =  (Usuario) receberLogin();
                 mostrarOpcoes();
                 continue;
+            case 7:
+               try {
+                   new AdicionarUsuario().adicionarUsuario();
+               }catch (SQLException e){
+                   System.out.println("Falha ao adicionar usuário");
+                   throw new RuntimeException(e);
+
+               }
+               continue;
+
 
 
 

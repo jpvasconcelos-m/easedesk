@@ -4,4 +4,6 @@ public interface Usuario {
     void capturarChamado();
     void finalizarChamado();
 
+    String getLogin();
+
 }
