@@ -78,18 +78,18 @@ public class Chamado {
 
             case ABERTO:
                str = "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao +
-                        ";" + "Usuario criador: " + this.usuarioCriador.login + ";" + " Prioridade: "
+                        ";" + "Usuario criador: " + this.usuarioCriador.email + ";" + " Prioridade: "
                         + this.prioridade + ";" + " " + "Responsável: " + ";" +  "Status: " + Status.ABERTO;
                break;
             case CAPTURADO:
                 str = "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao +
-                        ";" + "Usuario criador: " + this.usuarioCriador.login + ";" + " Prioridade: "
-                        + this.prioridade + ";" + " " + "Responsável: " + this.usuarioResponsavel.login + ";" +  " Status: " + Status.CAPTURADO;
+                        ";" + "Usuario criador: " + this.usuarioCriador.email + ";" + " Prioridade: "
+                        + this.prioridade + ";" + " " + "Responsável: " + this.usuarioResponsavel.email + ";" +  " Status: " + Status.CAPTURADO;
                 break;
             case CONCLUIDO:
                 str = "ID: " + this.id + ";" + " Descrição:" + " " + this.descricao +
-                        ";" + "Usuario criador: " + this.usuarioCriador.login + ";" + " Prioridade: "
-                        + this.prioridade + ";" + " " + "Responsável: " + this.usuarioResponsavel.login + ";" +  " Status: " + Status.CONCLUIDO
+                        ";" + "Usuario criador: " + this.usuarioCriador.email + ";" + " Prioridade: "
+                        + this.prioridade + ";" + " " + "Responsável: " + this.usuarioResponsavel.email + ";" +  " Status: " + Status.CONCLUIDO
                         + "; Solução : " + this.solucao;
                 break;
 
