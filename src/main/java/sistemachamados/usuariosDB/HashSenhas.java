@@ -1,4 +1,4 @@
-package sistemachamados.DBusuarios;
+package sistemachamados.usuariosDB;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

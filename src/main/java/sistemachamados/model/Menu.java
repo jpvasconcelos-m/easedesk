@@ -1,6 +1,6 @@
 package sistemachamados.model;
 
-import sistemachamados.DBusuarios.AdicionarUsuario;
+import sistemachamados.usuariosDB.AdicionarUsuario;
 
 import java.sql.SQLException;
 import java.util.InputMismatchException;

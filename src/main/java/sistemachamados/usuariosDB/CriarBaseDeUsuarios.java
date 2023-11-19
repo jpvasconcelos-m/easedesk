@@ -1,4 +1,4 @@
-package sistemachamados.DBusuarios;
+package sistemachamados.usuariosDB;
 
 import java.sql.Connection;
 import java.sql.SQLException;

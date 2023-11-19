@@ -1,4 +1,4 @@
-package sistemachamados.DBusuarios;
+package sistemachamados.usuariosDB;
 
 import sistemachamados.model.Usuario;
 
