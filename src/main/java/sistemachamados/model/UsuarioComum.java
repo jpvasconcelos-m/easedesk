@@ -1,5 +1,7 @@
 package sistemachamados.model;
 
+import sistemachamados.usuariosDB.HashSenhas;
+
 import java.util.Scanner;
 
 import static sistemachamados.model.FilaChamados.fila;
@@ -9,11 +11,13 @@ public class UsuarioComum implements Usuario {
 
 
     String nome;
-    String login;
+    String email;
     String senha;
+    Boolean isAdmin = false;
 
-    public UsuarioComum(String login) {
-        this.login = login;
+    public UsuarioComum(String email,String senha) {
+        this.email = email;
+        this.senha = new HashSenhas().hashPassword(senha);
     }
 
 
@@ -31,8 +35,13 @@ public class UsuarioComum implements Usuario {
     }
 
 
-    public String getLogin() {
-        return login;
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String getHashSenha() {
+        return this.senha;
     }
 
 
