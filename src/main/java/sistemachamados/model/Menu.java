@@ -102,10 +102,11 @@ public class Menu {
         System.out.println("Entre seu usuário: ");
         String usuario = sc.nextLine();
         if (usuario.contains("admin")){
-            return new UsuarioTI(usuario);
+            return new UsuarioTI(usuario,"senha");
+            //TODO ALTERAR PARA FUNCIONAR COM BANCO DE DADOS.
         }
         else {
-            return new UsuarioComum(usuario);
+            return new UsuarioComum(usuario,"senha");
         }
 
 
