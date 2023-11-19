@@ -1,4 +1,4 @@
-package sistemachamados.BaseUsuario;
+package sistemachamados.DBusuarios;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
