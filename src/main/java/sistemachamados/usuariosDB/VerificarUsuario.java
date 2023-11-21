@@ -1,8 +1,7 @@
 package sistemachamados.usuariosDB;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
+import sistemachamados.model.GerenciadorLogin;
 import sistemachamados.model.Usuario;
-import sistemachamados.model.UsuarioTI;
 
 import java.sql.*;
 
@@ -10,61 +9,81 @@ public class VerificarUsuario {
     static Connection conexao = FabricaConexao.getConexao();
     static HashSenhas hs = new HashSenhas();
 
-   public void usuarioJaExiste (Usuario usuario) throws SQLException{
 
+
+
+
+
+   public boolean usuarioisAdmin(String email) throws SQLException{
 
        String sql = "SELECT * FROM usuarios WHERE email = ?";
-      PreparedStatement pstmt = conexao.prepareStatement(sql);
-      pstmt.setString(1,usuario.getEmail());
-      ResultSet resultSet = pstmt.executeQuery();
+       PreparedStatement pstmt = conexao.prepareStatement(sql);
+       pstmt.setString(1,email);
+       ResultSet resultado = pstmt.executeQuery();
+       resultado.next();
 
-      while(resultSet.next()){
-          int id = resultSet.getInt("id");
-          String nome = resultSet.getString("nome");
-          String email = resultSet.getString("email");
-          String senha = resultSet.getString("senha");
-          Boolean isAdmin = resultSet.getBoolean("isadmin");
 
-          System.out.println("ID: "+ id + ", Nome: " + nome + ", Email: " + email + ", Administrador : " + (isAdmin? "Sim":"Nao"));
+       return resultado.getBoolean("isadmin");
+
+
+
+
+
+      }
+      public boolean usuarioExiste(String email){
+       String sql = "SELECT * FROM usuarios WHERE email = ?";
+       try {
+           PreparedStatement pstmt = conexao.prepareStatement(sql);
+           pstmt.setString(1,email);
+           ResultSet resultado = pstmt.executeQuery();
+           return  resultado.next();
+       }catch (SQLException e){
+           throw new RuntimeException(e);
+       }
+
 
 
       }
 
 
 
-   }
 
-   public boolean autenticacaoUsuario(String email, String senha){
+
+   public Usuario autenticacaoUsuario(String email, String senhaInserida) throws SQLException{
        String sql = "SELECT * FROM usuarios WHERE email = ?";
-       try(PreparedStatement pstmt = conexao.prepareStatement(sql)){
+       PreparedStatement pstmt = conexao.prepareStatement(sql);
+
+
            pstmt.setString(1, email);
 
+         ResultSet resultado = pstmt.executeQuery();
 
-
-
-           ResultSet resultSet = pstmt.executeQuery();
-           if (resultSet.next() ){
-               if(hs.checkPassword(senha,resultSet.getString("senha"))){
+         
+           if (resultado.next() ){
+               if(hs.checkPassword(resultado.getString("salt") + senhaInserida,resultado.getString("hash"))){
                    System.out.println("Sucesso");
+                   return new Usuario(email);
                }
-               else {
-                   System.out.println("Falha");
-               }
+
            }
            else {
-               System.out.println("Email e/ou senha incorretos.");
-               return false;
+               if(!email.contains("@")|| !email.contains(".")||email.length()<6){
+                   System.out.println("Email inválido!");
+                   //TODO IMPLEMENTAR "ESQUECI MINHA SENHA".
+                   return new GerenciadorLogin().perguntarCadastro();
+               }
+               else {
+                   System.out.println("Email e/ou senha incorretos.");
+                   return new GerenciadorLogin().perguntarCadastro();
+               }
            }
 
-       }catch (SQLException e){
-           e.printStackTrace();
-       }
-
-       return false;
+        return null;
    }
 
     public static void main(String[] args) throws SQLException {
-        System.out.println(hs.checkPassword("pedro132",hs.hashPassword("pedro132") ));
+        VerificarUsuario vu = new VerificarUsuario();
+
 
     }
 

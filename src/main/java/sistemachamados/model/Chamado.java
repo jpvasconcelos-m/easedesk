@@ -11,8 +11,8 @@ public class Chamado {
     int id;
     String descricao;
     int prioridade;
-    UsuarioComum usuarioCriador;
-    UsuarioTI usuarioResponsavel;
+    Usuario usuarioCriador;
+    Usuario usuarioResponsavel;
 
     String solucao = "";
 
@@ -31,7 +31,7 @@ public class Chamado {
 
 
 
-    public Chamado(String descricao, int prioridade, UsuarioComum usuarioCriador) {
+    public Chamado(String descricao, int prioridade, Usuario usuarioCriador) {
         this.descricao = descricao;
         this.prioridade = prioridade;
         this.usuarioCriador = usuarioCriador;
@@ -50,11 +50,11 @@ public class Chamado {
         return prioridade;
     }
 
-    public UsuarioComum getUsuarioCriador() {
+    public Usuario getUsuarioCriador() {
         return usuarioCriador;
     }
 
-    public UsuarioComum getUsuarioResponsavel() {
+    public Usuario getUsuarioResponsavel() {
         return usuarioResponsavel;
     }
 
@@ -62,7 +62,7 @@ public class Chamado {
         return id;
     }
 
-    public void setUsuarioResponsavel(UsuarioTI usuarioResponsavel) {
+    public void setUsuarioResponsavel(Usuario usuarioResponsavel) {
         this.usuarioResponsavel = usuarioResponsavel;
 
     }

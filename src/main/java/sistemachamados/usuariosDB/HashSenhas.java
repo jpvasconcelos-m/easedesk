@@ -6,19 +6,20 @@ public class HashSenhas {
 
     private static BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    private  String generateSalt(){
+    public  String generateSalt(){
         return BCrypt.gensalt();
     }
 
-    public  String hashPassword(String password){
-        String salt = generateSalt();
-        return passwordEncoder.encode(password+salt);
+    public  String hashPassword(String passwordPlusSalt){
+
+        return passwordEncoder.encode(passwordPlusSalt);
     }
 
     public  boolean checkPassword(String password , String hashedPassword){
         //TODO NAO FUNCIONA! SEMPRE RETORNA FALSO!
         return passwordEncoder.matches(password,hashedPassword);
     }
+
 
 
 

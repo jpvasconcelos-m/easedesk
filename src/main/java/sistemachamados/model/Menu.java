@@ -1,16 +1,14 @@
 package sistemachamados.model;
 
-import sistemachamados.usuariosDB.AdicionarUsuario;
-
-import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static sistemachamados.model.FilaChamados.fila;
 
-public class Menu {
+class Menu {
 
-    static Scanner sc = new Scanner(System.in);
+    static private Scanner sc = new Scanner(System.in);
+    static private GerenciadorLogin gl = new GerenciadorLogin();
 
 
 
@@ -20,7 +18,7 @@ public class Menu {
 
 
 
-        Usuario usuario = (Usuario) receberLogin();
+        Usuario usuario = gl.iniciarGerenciadorLogin();
 
 
         mostrarOpcoes();
@@ -45,9 +43,13 @@ public class Menu {
         switch(opcao){
             case 1:
                 criarChamado(usuario);
-                System.out.println("Chamado Criado!\n");
+                System.out.println("Chamado Criado!");
                 mostrarOpcoes();
+                continue;
             case 2:
+                usuario.capturarChamado();
+                continue;
+            case 3:
                 if (fila.isEmpty()){
                     mostrarOpcoes();
                     System.out.println("Não há nenhum chamado na fila.");
@@ -57,10 +59,7 @@ public class Menu {
                 else
                     verFila();
                     continue;
-            case 3:
 
-                usuario.capturarChamado();
-                continue;
 
             case 4: usuario.finalizarChamado();
                     mostrarOpcoes();
@@ -70,24 +69,6 @@ public class Menu {
                     continue;
 
 
-            case 6:
-                usuario =  (Usuario) receberLogin();
-                mostrarOpcoes();
-                continue;
-            case 7:
-               try {
-                   new AdicionarUsuario().adicionarUsuario();
-               }catch (SQLException e){
-                   System.out.println("Falha ao adicionar usuário");
-                   throw new RuntimeException(e);
-
-               }
-               continue;
-
-
-
-
-
             default: break;
         }
 
@@ -95,30 +76,19 @@ public class Menu {
         }
 
 
-
+    sc.close();
     }
 
-    private static Object receberLogin() {
-        System.out.println("Entre seu usuário: ");
-        String usuario = sc.nextLine();
-        if (usuario.contains("admin")){
-            return new UsuarioTI(usuario,"senha");
-            //TODO ALTERAR PARA FUNCIONAR COM BANCO DE DADOS.
-        }
-        else {
-            return new UsuarioComum(usuario,"senha");
-        }
 
-
-
-
-
-
-    }
 
     static void mostrarOpcoes(){
-        System.out.println("1 - Criar Chamado\n2 - Ver fila de Chamados\n3 - Capturar Chamado\n4 - Finalizar Chamado\n5 - Remover da Fila\n6 - Trocar Usuário ");
-
+        System.out.println("""
+                1 - Criar Chamado;
+                2 - Capturar Chamado;
+                3 - Ver Fila de Chamados;
+                4 - Finalizar Chamado;
+                0 - Sair;
+                """);
 
 
 
@@ -136,9 +106,10 @@ public class Menu {
             System.out.println("Defina a prioridade (1 a 3)");
             prioridade = sc.nextLine();
 
+
         }
 
-        new Chamado(descricao, Integer.parseInt(prioridade), (UsuarioComum) usuario).setStatus(Status.ABERTO);
+        new Chamado(descricao, Integer.parseInt(prioridade), (Usuario) usuario).setStatus(Status.ABERTO);
 
 
 

@@ -1,10 +1,10 @@
 import org.junit.jupiter.api.Test;
-import sistemachamados.model.UsuarioComum;
+import sistemachamados.model.Usuario;
 import sistemachamados.utils.SenhaUtils;
 
 public class TesteUsuarioSenha {
 
-    private UsuarioComum usuario;
+    private Usuario usuario;
     private String senha;
 
 
