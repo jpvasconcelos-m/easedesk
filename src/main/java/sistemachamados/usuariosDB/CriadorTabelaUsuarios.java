@@ -22,7 +22,7 @@ public class CriadorTabelaUsuarios {
                 """;
         Statement stmt = conexao.createStatement();
         stmt.execute(sql);
-        System.out.println("Tabela criada com sucesso!");
+        System.out.println("Tabela de usuários criada com sucesso!");
         conexao.close();
     }
 

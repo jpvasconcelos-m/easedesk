@@ -90,9 +90,6 @@ class Menu {
                 0 - Sair;
                 """);
 
-
-
-
     }
 
     static void criarChamado(Usuario usuario){

@@ -1,8 +1,11 @@
 package sistemachamados.model;
 
 import sistemachamados.usuariosDB.CriadorUsuario;
+import sistemachamados.usuariosDB.FabricaConexao;
 import sistemachamados.usuariosDB.VerificarUsuario;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -53,15 +56,30 @@ public class Usuario {
 
 
 
-    void criarChamado(){
+    void criarChamado() throws SQLException{
+        Connection conexao = FabricaConexao.getConexao();
+        String sql = "INSERT INTO chamados (descricao,usuariosolicitante,status) VALUES (?,?,?)";
+        PreparedStatement pstmt = conexao.prepareStatement(sql);
 
 
 
         System.out.println("Digite a descricão do chamado: ");
         String descricao = sc.nextLine();
+
         System.out.println("Digite a prioridade de 1 a 3:");
         int prioridade = sc.nextInt();
-        fila.add(new Chamado(descricao,prioridade,this));
+        Chamado novoChamado = new Chamado(descricao,prioridade,this);
+        novoChamado.setStatus(Status.ABERTO);
+        fila.add(novoChamado);
+
+
+        pstmt.setString(1,descricao);
+        pstmt.setString(2,this.email);
+        pstmt.setString(3,Status.ABERTO.toString());
+
+        pstmt.execute(sql);
+        conexao.close();
+
 
 
     }

@@ -1,6 +1,7 @@
 package sistemachamados.usuariosDB;
 
 import sistemachamados.model.GerenciadorLogin;
+import sistemachamados.model.Status;
 import sistemachamados.model.Usuario;
 
 import java.sql.*;
@@ -83,6 +84,7 @@ public class VerificarUsuario {
 
     public static void main(String[] args) throws SQLException {
         VerificarUsuario vu = new VerificarUsuario();
+        System.out.println(Status.ABERTO.toString());
 
 
     }
