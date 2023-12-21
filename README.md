@@ -8,9 +8,7 @@ O **Sistema de Tickets EaseDesk** é um projeto dinâmico, em constante evoluç�
 
 ## Últimas Alterações
 
-🛠️ Atualmente, estamos no meio de uma transição significativa no método de conexão com o banco de dados. Abandonando a abordagem convencional, porém mais simples, do `java.sql.DriverManager`, estamos adotando o JPA (Java Persistence API) com Hibernate. Essa mudança visa aprimorar a manutenção do código, simplificar consultas ao banco de dados e proporcionar maior flexibilidade na modelagem de entidades.
-
-Até o momento, apenas uma parte da lógica do programa foi implementada e ainda não há uma interface do usuário.
+🛠️ Atualmente, estamos no meio de uma transição significativa no método de conexão com o banco de dados. Abandonando a abordagem convencional, porém mais simples, do `java.sql.DriverManager`, estamos adotando o JPA (Java Persistence API) com Hibernate. Essa mudança visa aprimorar a manutenção do código, simplificar consultas ao banco de dados e proporcionar maior flexibilidade na modelagem de entidades.Até o momento, apenas uma parte da lógica do programa foi implementada e ainda não há uma interface do usuário.
 
 ## Como Contribuir
 
@@ -30,4 +28,4 @@ Sua participação é fundamental para o crescimento contínuo e a melhoria do *
 3. **Execute o aplicativo.**
    Execute o projeto usando seu IDE preferido ou os comandos relevantes para sua pilha de tecnologia.
 
-Obrigado por explorar este projeto e contribuir para sua melhoria! Juntos, vamos construir uma solução eficiente e robusta para gerenciar tickets de helpdesk. 🎉
+Obrigado por explorar este projeto e contribuir para sua melhoria!
