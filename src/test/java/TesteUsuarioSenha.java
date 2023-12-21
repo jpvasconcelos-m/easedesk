@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
-import sistemachamados.model.Usuario;
-import sistemachamados.utils.SenhaUtils;
+import easedesk.model.Usuario;
+import easedesk.utils.SenhaUtils;
 
 public class TesteUsuarioSenha {
 
