@@ -8,7 +8,7 @@ The EaseDesk Ticket System is a dynamic project, continually evolving as I acqui
 
 ## Latest Changes
 
-🛠️ We're currently in the midst of a significant transition in the database connectivity method. Shifting from the conventional `java.sql.DriverManager` approach, we are embracing JPA (Java Persistence API) with Hibernate. This change is aimed at improving code maintenance, simplifying database queries, and providing greater flexibility in entity modeling.
+🛠️ We're currently in the midst of a significant transition in the database connectivity method. Shifting from the unconventional but simplier `java.sql.DriverManager`  approach, we are embracing JPA (Java Persistence API) with Hibernate. This change is aimed at improving code maintenance, simplifying database queries, and providing greater flexibility in entity modeling.
 Thus far, only a portion of the program's logic has been implemented and there is no user interface.
 ## How to Contribute
 
