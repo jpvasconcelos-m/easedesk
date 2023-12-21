@@ -8,7 +8,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 
-        <class>sistema-chamados.src.main.java.sistemachamados.usuariosDB.CriadorUsuario</class>
+        <class>sistema-chamados.src.main.java.easedesk.usuariosDB.CriadorUsuario</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
