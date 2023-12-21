@@ -1,31 +1,33 @@
-# EaseDesk Ticket System
+# Sistema de Tickets EaseDesk
 
-Welcome to the EaseDesk Ticket System repository! 🚀 This project is a testament to my ongoing journey in programming and the pursuit of technical excellence. The primary objective is to create an efficient solution for managing helpdesk tickets, ensuring a seamless experience for users and support agents.
+Bem-vindo ao repositório do Sistema de Tickets EaseDesk! 🚀 Este projeto é um testemunho da minha jornada contínua na programação e da busca pela excelência técnica. O objetivo principal é criar uma solução eficiente para gerenciar tickets de helpdesk, garantindo uma experiência contínua para usuários e agentes de suporte.
 
-## About the Project
+## Sobre o Projeto
 
-The EaseDesk Ticket System is a dynamic project, continually evolving as I acquire new knowledge and skills. I am dedicated to enhancing code quality, system efficiency, and user experience. Your interest, contributions, and feedback are highly valued as I strive to make this system better with each iteration.
+O **Sistema de Tickets EaseDesk** é um projeto dinâmico, em constante evolução à medida que adquiro novos conhecimentos e habilidades. Estou dedicado a aprimorar a qualidade do código, a eficiência do sistema e a experiência do usuário. Seu interesse, contribuições e feedback são altamente valorizados enquanto me esforço para tornar este sistema melhor a cada iteração.
 
-## Latest Changes
+## Últimas Alterações
 
-🛠️ We're currently in the midst of a significant transition in the database connectivity method. Shifting from the unconventional but simplier `java.sql.DriverManager`  approach, we are embracing JPA (Java Persistence API) with Hibernate. This change is aimed at improving code maintenance, simplifying database queries, and providing greater flexibility in entity modeling.
-Thus far, only a portion of the program's logic has been implemented and there is no user interface.
-## How to Contribute
+🛠️ Atualmente, estamos no meio de uma transição significativa no método de conexão com o banco de dados. Abandonando a abordagem convencional, porém mais simples, do `java.sql.DriverManager`, estamos adotando o JPA (Java Persistence API) com Hibernate. Essa mudança visa aprimorar a manutenção do código, simplificar consultas ao banco de dados e proporcionar maior flexibilidade na modelagem de entidades.
 
-If you're enthusiastic about contributing to this project, there are various ways you can get involved:
+Até o momento, apenas uma parte da lógica do programa foi implementada e ainda não há uma interface do usuário.
 
-- Open issues to report bugs or suggest enhancements.
-- Submit pull requests to collaborate on the development process.
-- Share your thoughts and suggestions to help shape the project.
+## Como Contribuir
 
-Your participation is instrumental in the continuous growth and improvement of the EaseDesk Ticket System.
+Se você está entusiasmado em contribuir para este projeto, existem várias maneiras de se envolver:
 
-## How to Run the Project
+- Abra problemas para relatar bugs ou sugerir melhorias.
+- Envie solicitações de pull para colaborar no processo de desenvolvimento.
+- Compartilhe seus pensamentos e sugestões para ajudar a moldar o projeto.
 
-1. **Clone the repository.**
-2. **Set up your database credentials.**
-   Configure your database credentials in the appropriate configuration file (e.g., `config.properties`).
-3. **Run the application.**
-   Execute the project using your preferred IDE or the relevant commands for your technology stack.
+Sua participação é fundamental para o crescimento contínuo e a melhoria do **Sistema de Tickets EaseDesk**.
 
-Thank you for exploring this project and contributing to its improvement! Together, let's build an efficient and robust solution for managing helpdesk tickets. 🎉
+## Como Executar o Projeto
+
+1. **Clone o repositório.**
+2. **Configure suas credenciais do banco de dados.**
+   Configure suas credenciais do banco de dados no arquivo de configuração apropriado (por exemplo, `config.properties`).
+3. **Execute o aplicativo.**
+   Execute o projeto usando seu IDE preferido ou os comandos relevantes para sua pilha de tecnologia.
+
+Obrigado por explorar este projeto e contribuir para sua melhoria! Juntos, vamos construir uma solução eficiente e robusta para gerenciar tickets de helpdesk. 🎉
