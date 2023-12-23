@@ -6,9 +6,10 @@
 
     <persistence-unit name="easedesk">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>easedesk.model.User</class>
 
 
-        <class></class>
+
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
