@@ -18,7 +18,7 @@ If you're enthusiastic about contributing to this project, there are various way
 - Submit pull requests to collaborate on the development process.
 - Share your thoughts and suggestions to help shape the project.
 
-Your participation is instrumental in the continuous growth and improvement of the EaseDesk Ticket System.
+Your participation is instrumental in the continuous growth and improvement of the EaseDesk.
 
 ## How to Run the Project
 
@@ -28,4 +28,4 @@ Your participation is instrumental in the continuous growth and improvement of t
 3. **Run the application.**
    Execute the project using your preferred IDE or the relevant commands for your technology stack.
 
-Thank you for exploring this project and contributing to its improvement! Together, let's build an efficient and robust solution for managing helpdesk tickets. 🎉
+Thank you for exploring this project and contributing to its improvement! 🎉
