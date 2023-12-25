@@ -15,6 +15,15 @@ public class Ticket {
     private User requester;
     private User responsible;
 
+    public Ticket(String description, User requester, User responsible) {
+        this.description = description;
+        this.requester = requester;
+        this.responsible = responsible;
+    }
+
+    public Ticket() {
+    }
+
     public Long getId() {
         return id;
     }
