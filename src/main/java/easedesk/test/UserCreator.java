@@ -10,6 +10,7 @@ public class UserCreator {
         User user1 = new User("Renato Trajano Melo","renatotrajanom@gmail.com",false);
         User user2 = new User("Luis Fernandes Alcântara","lfa@gmail.com",false);
         User user3 = new User("Joelma Tamires Dionísio","joelmadionisio97@gmail.com",false);
+        User user4 = new User("Joelma Tamires Dionísio","joaopedrosao@gmail.com",false);
 
         DAO<User> dao = new DAO<>(User.class);
         dao.openTransaction();

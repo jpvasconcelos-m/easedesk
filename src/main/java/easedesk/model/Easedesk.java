@@ -7,10 +7,15 @@ package easedesk.model;
 
 import easedesk.infra.DAO;
 
+import java.util.List;
+
 public class Easedesk {
     public static void main(String[] args) {
         //TODO create method for each function using other class from model.
         showMenu();
+        search("joaopedrosao@gmail.com");
+
+
 
 
     }
@@ -21,8 +26,18 @@ public class Easedesk {
         System.out.println(" 2 - Forgot my credentials");
         System.out.println(" 3 - Register");
     }
-    static void register(String name, String email, boolean isAdmin){
+    static void register(User user){
         //TODO create later overwrite with an method with friendly user Interface, not CLI.
+
+       }
+    static void search(String email){
+        DAO<User> dao = new DAO<>(User.class);
+        List<User> users = dao.query("obtainUsersEmailEqualsTo","email",email);
+        for(User u : users){
+            System.out.println(u.getName());
+        }
+
+
 
 
 
