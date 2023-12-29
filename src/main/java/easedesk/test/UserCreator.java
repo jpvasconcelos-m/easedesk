@@ -17,6 +17,7 @@ public class UserCreator {
         dao.include(user1);
         dao.include(user2);
         dao.include(user3);
+        dao.include(user4);
         dao.closeTransaction();
 
         System.out.println("User1 ID:" + user1.getId());
