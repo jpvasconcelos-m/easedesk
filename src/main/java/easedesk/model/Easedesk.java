@@ -13,7 +13,7 @@ public class Easedesk {
     public static void main(String[] args) {
         //TODO create method for each function using other class from model.
         showMenu();
-        search("joaopedrosao@gmail.com");
+        search();
 
 
 
@@ -30,9 +30,9 @@ public class Easedesk {
         //TODO create later overwrite with an method with friendly user Interface, not CLI.
 
        }
-    static void search(String email){
+    static void search(){
         DAO<User> dao = new DAO<>(User.class);
-        List<User> users = dao.query("obtainUsersEmailEqualsTo","email",email);
+        List<User> users = dao.query("obtainUsersEmailEqualsTo");
         for(User u : users){
             System.out.println(u.getName());
         }
