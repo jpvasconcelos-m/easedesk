@@ -8,7 +8,7 @@ public class TicketCreator {
     public static void main(String[] args) {
         DAO<User> userDAO = new DAO<>(User.class);
 
-        User user = userDAO.obtainById(9L);
+        User user = userDAO.obtainById(50L);
         System.out.println(user.getTicket());
         userDAO.close();
 
