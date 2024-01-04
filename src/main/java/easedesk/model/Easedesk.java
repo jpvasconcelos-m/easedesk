@@ -28,6 +28,7 @@ public class Easedesk {
         System.out.println(" 1 - Login");
         System.out.println(" 2 - Forgot my credentials");
         System.out.println(" 3 - Register");
+        System.out.println(" 4 - Exit Program");
     }
 
     static void register(){
@@ -56,6 +57,7 @@ public class Easedesk {
 
             }
         }
+        sc.close();
 
 
     }
@@ -69,6 +71,7 @@ public class Easedesk {
 
        }
     static void search(){
+            //TODO CREATE A CONFIGURE QUERY FOR THIS METHOD.
         DAO<User> dao = new DAO<>(User.class);
         List<User> users = dao.query("obtainUsersEmailEqualsTo");
         for(User u : users){
