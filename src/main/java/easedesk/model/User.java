@@ -9,8 +9,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToOne
-    private User Ticket;
+
 
     @Column(unique = true)
     private String email;
@@ -59,11 +58,7 @@ public class User {
         isAdmin = admin;
     }
 
-    public User getTicket() {
-        return Ticket;
-    }
 
-    public void setTicket(User ticket) {
-        Ticket = ticket;
-    }
+
+
 }
