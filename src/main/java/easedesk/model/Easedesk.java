@@ -31,6 +31,20 @@ public class Easedesk {
         System.out.println(" 4 - Exit Program");
     }
 
+    static void menu(){
+        int choice = sc.nextInt();
+        switch (choice){
+            case 1:
+                //Login
+            case 2:
+                //Forgot
+            case 3:
+                register();
+            case 4:
+                System.exit(0);
+        }
+    }
+
     static void register(){
         while(true) {
             try {
